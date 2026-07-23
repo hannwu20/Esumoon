@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESUMOON — 現代化數位體驗與網頁設計</title>
+  <meta name="description" content="ESUMOON 致力於打造極致視覺美學與現代化互動體驗的網頁應用。支援動態粒子背景、玻璃擬態視覺與響應式佈局。">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Particle Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Navigation Header -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-icon">🌙</span>
+        <span class="logo-text">ESU<span class="highlight">MOON</span></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#hero" class="nav-link active">首頁</a>
+        <a href="#features" class="nav-link">特色亮點</a>
+        <a href="#portfolio" class="nav-link">作品展示</a>
+        <a href="#widgets" class="nav-link">互動工具</a>
+        <a href="#contact" class="nav-link">聯絡我們</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="切換深淺模式">
+          <span class="theme-icon sun">☀️</span>
+          <span class="theme-icon moon">🌙</span>
+        </button>
+        <a href="#contact" class="cta-btn primary-btn btn-sm">開始體驗</a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="選單選單">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-glow"></div>
+      <div class="container hero-content">
+        <div class="badge fade-in">
+          <span class="pulse-dot"></span>
+          <span>✨ 探索無限可能的數位領域</span>
+        </div>
+        
+        <h1 class="hero-title fade-in">
+          打造極致視覺與體驗的<br>
+          <span class="gradient-text">現代化網頁應用</span>
+        </h1>
+        
+        <p class="hero-subtitle fade-in">
+          結合現代美學、流暢動效與反應敏捷的智慧前端架構。無論是品牌官網、互動專案或數位儀表板，為您呈現絕佳體驗。
+        </p>
+
+        <div class="hero-buttons fade-in">
+          <a href="#portfolio" class="cta-btn primary-btn">
+            <span>探索作品展示</span>
+            <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#features" class="cta-btn secondary-btn">了解特色架構</a>
+        </div>
+
+        <!-- Metrics Section -->
+        <div class="metrics-grid fade-in">
+          <div class="metric-card glass-card">
+            <div class="metric-value" data-target="99.9">0%</div>
+            <div class="metric-label">客戶滿意度</div>
+          </div>
+          <div class="metric-card glass-card">
+            <div class="metric-value" data-target="120">0+</div>
+            <div class="metric-label">成功專案</div>
+          </div>
+          <div class="metric-card glass-card">
+            <div class="metric-value" data-target="60">0 FPS</div>
+            <div class="metric-label">流暢視覺動效</div>
+          </div>
+          <div class="metric-card glass-card">
+            <div class="metric-value" data-target="100">0%</div>
+            <div class="metric-label">響應式相容</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-header text-center fade-in">
+          <span class="sub-title">CORE FEATURES</span>
+          <h2 class="section-title">卓越的技術與設計特色</h2>
+          <p class="section-desc">結合精美的 Glassmorphism 視覺風格與流暢的元件邏輯</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card glass-card fade-in">
+            <div class="feature-icon-wrapper purple">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3>響應式極致設計</h3>
+            <p>完美相容桌面、平板與行動裝置，隨螢幕尺寸變化自動調整流暢版型與排版。</p>
+          </div>
+
+          <div class="feature-card glass-card fade-in">
+            <div class="feature-icon-wrapper cyan">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3>極速效能渲染</h3>
+            <p>零冗餘依賴，採用原生標準與高效 HTML/CSS/JS 構造，確保極速載入體驗。</p>
+          </div>
+
+          <div class="feature-card glass-card fade-in">
+            <div class="feature-icon-wrapper emerald">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <h3>微動效與粒子背景</h3>
+            <p>具備互動式 HTML5 Canvas 背景粒子與流暢 CSS Hover 飄浮回饋感。</p>
+          </div>
+
+          <div class="feature-card glass-card fade-in">
+            <div class="feature-icon-wrapper amber">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>深色與淺色模式</h3>
+            <p>一鍵彈性切換夜間星空與明亮主題，符合現代使用者個性化介面偏好。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio / Gallery Section -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <div class="section-header text-center fade-in">
+          <span class="sub-title">PORTFOLIO SHOWCASE</span>
+          <h2 class="section-title">精選專案作品 showcase</h2>
+          <p class="section-desc">點擊分類按鈕篩選不同類型的應用與視覺專案</p>
+        </div>
+
+        <div class="filter-tabs fade-in">
+          <button class="tab-btn active" data-filter="all">全部作品</button>
+          <button class="tab-btn" data-filter="ui">UI/UX 設計</button>
+          <button class="tab-btn" data-filter="web">Web 應用</button>
+          <button class="tab-btn" data-filter="dash">數據儀表板</button>
+        </div>
+
+        <div class="portfolio-grid">
+          <!-- Item 1 -->
+          <div class="portfolio-card glass-card fade-in" data-category="web">
+            <div class="portfolio-img-box">
+              <div class="portfolio-gradient-bg g-1"></div>
+              <div class="portfolio-overlay">
+                <span class="tag">Web App</span>
+                <h3>星空與月相動態儀表板</h3>
+                <p>結合實時數據與天文視覺畫面的網頁介面</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="portfolio-card glass-card fade-in" data-category="ui">
+            <div class="portfolio-img-box">
+              <div class="portfolio-gradient-bg g-2"></div>
+              <div class="portfolio-overlay">
+                <span class="tag">UI/UX</span>
+                <h3>極簡新奢華品牌官網</h3>
+                <p>玻璃擬態與沉浸式互動捲動視覺體驗</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="portfolio-card glass-card fade-in" data-category="dash">
+            <div class="portfolio-img-box">
+              <div class="portfolio-gradient-bg g-3"></div>
+              <div class="portfolio-overlay">
+                <span class="tag">Dashboard</span>
+                <h3>AI 數據可視化平台</h3>
+                <p>實時圖表、動態指標與高自由度自訂模組</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="portfolio-card glass-card fade-in" data-category="web">
+            <div class="portfolio-img-box">
+              <div class="portfolio-gradient-bg g-4"></div>
+              <div class="portfolio-overlay">
+                <span class="tag">Web App</span>
+                <h3>微服務體驗平台</h3>
+                <p>反應迅速且模組化的雲端用戶操作終端</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Widgets Section -->
+    <section id="widgets" class="section">
+      <div class="container">
+        <div class="section-header text-center fade-in">
+          <span class="sub-title">INTERACTIVE TOOLS</span>
+          <h2 class="section-title">實時互動控制與狀態面板</h2>
+          <p class="section-desc">試試下方互動控制項，自訂主題色系或即時查看系統動態</p>
+        </div>
+
+        <div class="widgets-grid">
+          <!-- Widget 1: System Status & Clock -->
+          <div class="widget-card glass-card fade-in">
+            <div class="widget-header">
+              <span class="widget-title">⏱️ 系統即時時鐘 & 運行狀態</span>
+              <span class="status-badge online">● Operational</span>
+            </div>
+            <div class="clock-display">
+              <div id="live-time" class="time-text">00:00:00</div>
+              <div id="live-date" class="date-text">2026-07-24 (Fri)</div>
+            </div>
+            <div class="sys-metrics">
+              <div class="sys-item">
+                <span>記憶體負載</span>
+                <div class="progress-bar"><div class="progress" style="width: 28%;"></div></div>
+              </div>
+              <div class="sys-item">
+                <span>網路延遲</span>
+                <span class="val">14 ms</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Widget 2: Accent Color Customizer -->
+          <div class="widget-card glass-card fade-in">
+            <div class="widget-header">
+              <span class="widget-title">🎨 主題色彩自由切換</span>
+              <span class="status-badge">Live Preview</span>
+            </div>
+            <p class="widget-desc">點擊下方色塊，即時更改全站重點強調色：</p>
+            <div class="color-picker-group">
+              <button class="color-dot active" data-color="indigo" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);"></button>
+              <button class="color-dot" data-color="cyan" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);"></button>
+              <button class="color-dot" data-color="emerald" style="background: linear-gradient(135deg, #10b981, #059669);"></button>
+              <button class="color-dot" data-color="rose" style="background: linear-gradient(135deg, #f43f5e, #e11d48);"></button>
+              <button class="color-dot" data-color="amber" style="background: linear-gradient(135deg, #f59e0b, #d97706);"></button>
+            </div>
+            <div class="preview-box">
+              <span>當前強調色預覽按鈕：</span>
+              <button class="cta-btn primary-btn btn-sm">Sample Accent</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-box glass-card fade-in">
+          <div class="contact-header text-center">
+            <span class="sub-title">GET IN TOUCH</span>
+            <h2 class="section-title">與我們取得聯絡</h2>
+            <p class="section-desc">填寫表單或有任何需求，我們將為您提供完整的數位解決方案。</p>
+          </div>
+
+          <form id="contact-form" class="contact-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">您的姓名</label>
+                <input type="text" id="name" required placeholder="例如：張小明">
+              </div>
+              <div class="form-group">
+                <label for="email">電子郵件</label>
+                <input type="email" id="email" required placeholder="name@example.com">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">諮詢主題</label>
+              <select id="subject">
+                <option value="web">網頁開發需求</option>
+                <option value="ui">UI/UX 設計諮詢</option>
+                <option value="custom">客製化系統應用</option>
+                <option value="other">其他合作企劃</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">需求說明</label>
+              <textarea id="message" rows="4" required placeholder="請簡述您的需求或建議..."></textarea>
+            </div>
+
+            <button type="submit" class="cta-btn primary-btn btn-full">
+              <span>發送訊息</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+            <div id="form-status" class="form-status"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <span class="logo-icon">🌙</span>
+          <span class="logo-text">ESU<span class="highlight">MOON</span></span>
+        </a>
+        <p>為您打造卓越的現代 Web 數位體驗。</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="link-group">
+          <h4>導覽</h4>
+          <a href="#hero">首頁</a>
+          <a href="#features">特色</a>
+          <a href="#portfolio">作品</a>
+          <a href="#contact">聯絡</a>
+        </div>
+        <div class="link-group">
+          <h4>技術</h4>
+          <span>HTML5 & CSS3</span>
+          <span>ES6+ JavaScript</span>
+          <span>Glassmorphism UI</span>
+          <span>Canvas Particles</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom text-center">
+      <p>&copy; 2026 ESUMOON Studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
