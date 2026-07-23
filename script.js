@@ -125,12 +125,12 @@ function initThemeToggle() {
   const themeBtn = document.getElementById('theme-toggle');
   if (!themeBtn) return;
 
-  const savedTheme = localStorage.getItem('esumoon_theme') || 'dark';
+  const savedTheme = localStorage.getItem('esumoon_theme') || 'light';
   document.documentElement.setAttribute('data-theme', savedTheme);
 
   themeBtn.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('esumoon_theme', newTheme);

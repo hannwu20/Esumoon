@@ -46,23 +46,23 @@
   --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* Light Theme Variables */
+/* Bright Light Theme Variables (Default) */
 [data-theme="light"] {
-  --bg-dark: #faf8f5;
-  --bg-highlight: #f2ede4;
-  --bg-surface: rgba(255, 255, 255, 0.85);
-  --bg-card: rgba(255, 255, 255, 0.9);
-  --bg-card-hover: rgba(255, 255, 255, 0.98);
-  --border-color: rgba(0, 0, 0, 0.08);
-  --border-glow: rgba(217, 119, 6, 0.25);
+  --bg-dark: #fdfbf7;
+  --bg-highlight: #f4efe6;
+  --bg-surface: rgba(255, 255, 255, 0.92);
+  --bg-card: rgba(255, 255, 255, 0.94);
+  --bg-card-hover: #ffffff;
+  --border-color: rgba(217, 119, 6, 0.16);
+  --border-glow: rgba(217, 119, 6, 0.4);
   
-  --text-main: #1c1917;
+  --text-main: #292524;
   --text-muted: #57534e;
   --text-subtle: #78716c;
   
-  --nav-bg: rgba(250, 248, 245, 0.9);
-  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.1);
+  --nav-bg: rgba(253, 251, 247, 0.92);
+  --shadow-sm: 0 6px 24px rgba(180, 83, 9, 0.07);
+  --shadow-lg: 0 20px 45px rgba(180, 83, 9, 0.14);
 }
 
 /* 2. Global Resets & Base Styles */
