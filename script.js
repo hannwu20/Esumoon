@@ -1,21 +1,19 @@
 /* ==========================================================================
-   ESUMOON Interactive JavaScript Modules
+   Esumoon 易善美 — Interactive JavaScript Modules
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   initParticleCanvas();
   initThemeToggle();
-  initAccentPicker();
-  initLiveClock();
-  initCounterAnimation();
-  initPortfolioFilter();
+  initFAQAccordion();
+  initProductFilter();
   initScrollReveal();
   initContactForm();
   initMobileMenu();
 });
 
 /* --------------------------------------------------------------------------
-   1. Interactive Particle Canvas Background
+   1. Interactive Titanium Particle Canvas Background
    -------------------------------------------------------------------------- */
 function initParticleCanvas() {
   const canvas = document.getElementById('bg-canvas');
@@ -24,7 +22,7 @@ function initParticleCanvas() {
   const ctx = canvas.getContext('2d');
   let width, height;
   let particles = [];
-  let mouse = { x: null, y: null, radius: 150 };
+  let mouse = { x: null, y: null, radius: 160 };
 
   function resize() {
     width = canvas.width = window.innerWidth;
@@ -48,10 +46,10 @@ function initParticleCanvas() {
     constructor() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.radius = Math.random() * 2 + 1;
-      this.vx = (Math.random() - 0.5) * 0.6;
-      this.vy = (Math.random() - 0.5) * 0.6;
-      this.alpha = Math.random() * 0.5 + 0.2;
+      this.radius = Math.random() * 2 + 0.8;
+      this.vx = (Math.random() - 0.5) * 0.5;
+      this.vy = (Math.random() - 0.5) * 0.5;
+      this.alpha = Math.random() * 0.45 + 0.15;
     }
 
     update() {
@@ -61,15 +59,14 @@ function initParticleCanvas() {
       if (this.x < 0 || this.x > width) this.vx *= -1;
       if (this.y < 0 || this.y > height) this.vy *= -1;
 
-      // Mouse attraction / interaction
       if (mouse.x !== null && mouse.y !== null) {
         const dx = mouse.x - this.x;
         const dy = mouse.y - this.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < mouse.radius) {
           const force = (mouse.radius - dist) / mouse.radius;
-          this.x -= (dx / dist) * force * 2;
-          this.y -= (dy / dist) * force * 2;
+          this.x -= (dx / dist) * force * 1.8;
+          this.y -= (dy / dist) * force * 1.8;
         }
       }
     }
@@ -78,13 +75,12 @@ function initParticleCanvas() {
       const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = isDark ? `rgba(147, 197, 253, ${this.alpha})` : `rgba(99, 102, 241, ${this.alpha * 0.7})`;
+      ctx.fillStyle = isDark ? `rgba(245, 158, 11, ${this.alpha})` : `rgba(217, 119, 6, ${this.alpha * 0.7})`;
       ctx.fill();
     }
   }
 
-  // Generate particle pool
-  const particleCount = Math.min(Math.floor((width * height) / 15000), 80);
+  const particleCount = Math.min(Math.floor((width * height) / 16000), 70);
   for (let i = 0; i < particleCount; i++) {
     particles.push(new Particle());
   }
@@ -92,9 +88,8 @@ function initParticleCanvas() {
   function animate() {
     ctx.clearRect(0, 0, width, height);
 
-    // Draw connecting lines between close particles
     const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
-    const lineColor = isDark ? 'rgba(99, 102, 241, ' : 'rgba(79, 70, 229, ';
+    const lineColor = isDark ? 'rgba(245, 158, 11, ' : 'rgba(217, 119, 6, ';
 
     for (let i = 0; i < particles.length; i++) {
       particles[i].update();
@@ -106,12 +101,12 @@ function initParticleCanvas() {
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < 120) {
-          const alpha = (1 - dist / 120) * 0.15;
+          const alpha = (1 - dist / 120) * 0.12;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
           ctx.strokeStyle = `${lineColor}${alpha})`;
-          ctx.lineWidth = 1;
+          ctx.lineWidth = 0.8;
           ctx.stroke();
         }
       }
@@ -124,7 +119,7 @@ function initParticleCanvas() {
 }
 
 /* --------------------------------------------------------------------------
-   2. Dark / Light Theme Toggle & Persistence
+   2. Dark / Light Theme Toggle
    -------------------------------------------------------------------------- */
 function initThemeToggle() {
   const themeBtn = document.getElementById('theme-toggle');
@@ -143,108 +138,33 @@ function initThemeToggle() {
 }
 
 /* --------------------------------------------------------------------------
-   3. Accent Color Customizer
+   3. FAQ Accordion Module
    -------------------------------------------------------------------------- */
-function initAccentPicker() {
-  const colorDots = document.querySelectorAll('.color-dot');
-  
-  colorDots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      colorDots.forEach(d => d.classList.remove('active'));
-      dot.classList.add('active');
+function initFAQAccordion() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
 
-      const colorName = dot.getAttribute('data-color');
-      if (colorName === 'indigo') {
-        document.documentElement.removeAttribute('data-accent');
-      } else {
-        document.documentElement.setAttribute('data-accent', colorName);
+  faqQuestions.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const faqItem = btn.parentElement;
+      const isActive = faqItem.classList.contains('active');
+
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+
+      if (!isActive) {
+        faqItem.classList.add('active');
       }
     });
   });
 }
 
 /* --------------------------------------------------------------------------
-   4. Live Clock & Dynamic Metrics Widget
+   4. Product Filter Tabs
    -------------------------------------------------------------------------- */
-function initLiveClock() {
-  const timeElem = document.getElementById('live-time');
-  const dateElem = document.getElementById('live-date');
-
-  if (!timeElem || !dateElem) return;
-
-  function updateTime() {
-    const now = new Date();
-    
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    timeElem.textContent = `${hours}:${minutes}:${seconds}`;
-
-    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, '0');
-    const date = String(now.getDate()).padStart(2, '0');
-    const dayName = days[now.getDay()];
-
-    dateElem.textContent = `${year}-${month}-${date} (${dayName})`;
-  }
-
-  updateTime();
-  setInterval(updateTime, 1000);
-}
-
-/* --------------------------------------------------------------------------
-   5. Number Counter Animation on Scroll
-   -------------------------------------------------------------------------- */
-function initCounterAnimation() {
-  const metricValues = document.querySelectorAll('.metric-value');
-  let animated = false;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !animated) {
-        animated = true;
-        metricValues.forEach(elem => {
-          const target = parseFloat(elem.getAttribute('data-target'));
-          const isPercent = elem.textContent.includes('%');
-          const isPlus = elem.textContent.includes('+');
-          const isFps = elem.textContent.includes('FPS');
-
-          let start = 0;
-          const duration = 1500;
-          const stepTime = 20;
-          const steps = duration / stepTime;
-          const increment = target / steps;
-
-          const timer = setInterval(() => {
-            start += increment;
-            if (start >= target) {
-              start = target;
-              clearInterval(timer);
-            }
-
-            let suffix = '';
-            if (isPercent) suffix = '%';
-            if (isPlus) suffix = '+';
-            if (isFps) suffix = ' FPS';
-
-            elem.textContent = `${Number.isInteger(target) ? Math.floor(start) : start.toFixed(1)}${suffix}`;
-          }, stepTime);
-        });
-      }
-    });
-  }, { threshold: 0.5 });
-
-  const metricsGrid = document.querySelector('.metrics-grid');
-  if (metricsGrid) observer.observe(metricsGrid);
-}
-
-/* --------------------------------------------------------------------------
-   6. Portfolio Category Filter Tabs
-   -------------------------------------------------------------------------- */
-function initPortfolioFilter() {
+function initProductFilter() {
   const tabBtns = document.querySelectorAll('.tab-btn');
-  const portfolioItems = document.querySelectorAll('.portfolio-card');
+  const products = document.querySelectorAll('.product-card');
 
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -253,17 +173,17 @@ function initPortfolioFilter() {
 
       const filter = btn.getAttribute('data-filter');
 
-      portfolioItems.forEach(item => {
+      products.forEach(item => {
         const category = item.getAttribute('data-category');
         if (filter === 'all' || filter === category) {
-          item.style.display = 'block';
+          item.style.display = 'flex';
           setTimeout(() => {
             item.style.opacity = '1';
             item.style.transform = 'scale(1)';
           }, 50);
         } else {
           item.style.opacity = '0';
-          item.style.transform = 'scale(0.9)';
+          item.style.transform = 'scale(0.92)';
           setTimeout(() => {
             item.style.display = 'none';
           }, 300);
@@ -274,7 +194,7 @@ function initPortfolioFilter() {
 }
 
 /* --------------------------------------------------------------------------
-   7. Scroll Reveal Animation Observer
+   5. Scroll Reveal Observer
    -------------------------------------------------------------------------- */
 function initScrollReveal() {
   const fadeElems = document.querySelectorAll('.fade-in');
@@ -286,15 +206,15 @@ function initScrollReveal() {
       }
     });
   }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
   });
 
   fadeElems.forEach(elem => observer.observe(elem));
 }
 
 /* --------------------------------------------------------------------------
-   8. Interactive Contact Form Submission
+   6. Contact Form Submission
    -------------------------------------------------------------------------- */
 function initContactForm() {
   const form = document.getElementById('contact-form');
@@ -309,11 +229,11 @@ function initContactForm() {
     const originalText = submitBtn.innerHTML;
 
     submitBtn.disabled = true;
-    submitBtn.innerHTML = '<span>發送中...</span>';
+    submitBtn.innerHTML = '<span>諮詢訊息發送中...</span>';
 
     setTimeout(() => {
       status.className = 'form-status success';
-      status.textContent = '🎉 感謝您的聯繫！我們已收到您的需求，將盡快回覆您。';
+      status.textContent = '🎉 感謝您的來訊！Esumoon 專人將於 24 小時內與您聯繫。';
       form.reset();
 
       submitBtn.disabled = false;
@@ -328,7 +248,7 @@ function initContactForm() {
 }
 
 /* --------------------------------------------------------------------------
-   9. Mobile Navigation Drawer Toggle
+   7. Mobile Navigation Toggle
    -------------------------------------------------------------------------- */
 function initMobileMenu() {
   const toggleBtn = document.getElementById('mobile-toggle');

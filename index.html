@@ -3,43 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ESUMOON — 現代化數位體驗與網頁設計</title>
-  <meta name="description" content="ESUMOON 致力於打造極致視覺美學與現代化互動體驗的網頁應用。支援動態粒子背景、玻璃擬態視覺與響應式佈局。">
+  <title>Esumoon 易善美 — 純鈦精緻壺器與飲食生活選品</title>
+  <meta name="description" content="Esumoon 易善美源自「用最簡單的方式，達到盡善盡美」的理念。專注於精緻德鐘鈦壺、八方鈦盒與純鈦飲食生活選品，以鈦為器，以茶修心。">
+  <meta name="keywords" content="Esumoon, 易善美, 德鐘鈦壺, 八方鈦盒, 純鈦茶具, 鈦金屬, 養生茶壺, 博友製鈦">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Ambient Particle Canvas Background -->
+  <!-- Dynamic Particle Canvas Background -->
   <canvas id="bg-canvas"></canvas>
 
   <!-- Navigation Header -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#" class="logo">
-        <span class="logo-icon">🌙</span>
-        <span class="logo-text">ESU<span class="highlight">MOON</span></span>
+        <span class="logo-mark">🫖</span>
+        <div class="logo-text-group">
+          <span class="logo-title">Esumoon</span>
+          <span class="logo-sub">易善美</span>
+        </div>
       </a>
 
       <nav class="nav-menu" id="nav-menu">
         <a href="#hero" class="nav-link active">首頁</a>
-        <a href="#features" class="nav-link">特色亮點</a>
-        <a href="#portfolio" class="nav-link">作品展示</a>
-        <a href="#widgets" class="nav-link">互動工具</a>
+        <a href="#about" class="nav-link">關於我們</a>
+        <a href="#advantages" class="nav-link">純鈦優勢</a>
+        <a href="#values" class="nav-link">核心價值</a>
+        <a href="#products" class="nav-link">精選產品</a>
+        <a href="#reports" class="nav-link">檢測報告</a>
+        <a href="#faq" class="nav-link">常見問題</a>
         <a href="#contact" class="nav-link">聯絡我們</a>
       </nav>
 
       <div class="nav-actions">
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="切換深淺模式">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="切換深淺主題">
           <span class="theme-icon sun">☀️</span>
           <span class="theme-icon moon">🌙</span>
         </button>
-        <a href="#contact" class="cta-btn primary-btn btn-sm">開始體驗</a>
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="選單選單">
+        <a href="#contact" class="cta-btn primary-btn btn-sm">線上諮詢</a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="選單">
           <span></span>
           <span></span>
           <span></span>
@@ -49,160 +56,218 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
+    <!-- Hero Banner Section -->
     <section id="hero" class="hero-section">
-      <div class="hero-glow"></div>
-      <div class="container hero-content">
-        <div class="badge fade-in">
-          <span class="pulse-dot"></span>
-          <span>✨ 探索無限可能的數位領域</span>
-        </div>
-        
-        <h1 class="hero-title fade-in">
-          打造極致視覺與體驗的<br>
-          <span class="gradient-text">現代化網頁應用</span>
-        </h1>
-        
-        <p class="hero-subtitle fade-in">
-          結合現代美學、流暢動效與反應敏捷的智慧前端架構。無論是品牌官網、互動專案或數位儀表板，為您呈現絕佳體驗。
-        </p>
+      <div class="hero-ambient-glow"></div>
+      <div class="container hero-grid">
+        <div class="hero-text-content fade-in">
+          <div class="release-badge">
+            <span class="badge-dot"></span>
+            <span>新品上市 | 德鐘鈦壺 x 八方鈦盒</span>
+          </div>
 
-        <div class="hero-buttons fade-in">
-          <a href="#portfolio" class="cta-btn primary-btn">
-            <span>探索作品展示</span>
-            <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="#features" class="cta-btn secondary-btn">了解特色架構</a>
+          <h1 class="hero-title">
+            以鈦為器 · 以茶修心<br>
+            <span class="gradient-text">一壺、一盒、藏天地</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            在一壼一食之間，品見生活真美。專注於純鈦養生壺器與飲食選品，讓極致工藝融入每日品茗體驗。
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#products" class="cta-btn primary-btn">
+              <span>探索新品系列</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#advantages" class="cta-btn secondary-btn">了解純鈦優勢</a>
+          </div>
+
+          <!-- Quick Metrics -->
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-num">99.9%</span>
+              <span class="metric-txt">高純度醫療級純鈦</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-num">0</span>
+              <span class="metric-txt">重金屬溶出與異味</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-num">國際</span>
+              <span class="metric-txt">設計大獎肯定</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Metrics Section -->
-        <div class="metrics-grid fade-in">
-          <div class="metric-card glass-card">
-            <div class="metric-value" data-target="99.9">0%</div>
-            <div class="metric-label">客戶滿意度</div>
-          </div>
-          <div class="metric-card glass-card">
-            <div class="metric-value" data-target="120">0+</div>
-            <div class="metric-label">成功專案</div>
-          </div>
-          <div class="metric-card glass-card">
-            <div class="metric-value" data-target="60">0 FPS</div>
-            <div class="metric-label">流暢視覺動效</div>
-          </div>
-          <div class="metric-card glass-card">
-            <div class="metric-value" data-target="100">0%</div>
-            <div class="metric-label">響應式相容</div>
+        <div class="hero-image-wrapper fade-in">
+          <div class="hero-card glass-card">
+            <img src="https://static.wixstatic.com/media/8fd0b3_de96a00ae5314b348b61d5076e899866~mv2.jpg" alt="德鐘鈦壺 x 八方鈦盒" class="hero-img">
+            <div class="hero-img-badge">
+              <span>千度結晶工藝 · 古韻美學</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="section">
+    <!-- Core Values Section (在一壼一食之間 品見生活真美) -->
+    <section id="values" class="section">
       <div class="container">
         <div class="section-header text-center fade-in">
-          <span class="sub-title">CORE FEATURES</span>
-          <h2 class="section-title">卓越的技術與設計特色</h2>
-          <p class="section-desc">結合精美的 Glassmorphism 視覺風格與流暢的元件邏輯</p>
+          <span class="sub-title">CORE VALUES</span>
+          <h2 class="section-title">在一壼一食之間 · 品見生活真美</h2>
+          <p class="section-desc">易善美堅持以純粹材質與精湛工藝，為您締造簡單安心的日常儀式感</p>
         </div>
 
-        <div class="features-grid">
-          <div class="feature-card glass-card fade-in">
-            <div class="feature-icon-wrapper purple">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </div>
-            <h3>響應式極致設計</h3>
-            <p>完美相容桌面、平板與行動裝置，隨螢幕尺寸變化自動調整流暢版型與排版。</p>
+        <div class="values-grid">
+          <div class="value-card glass-card fade-in">
+            <div class="value-icon">🍃</div>
+            <h3>純淨安心</h3>
+            <p>堅持安心健康的鈦器（壺）選擇，重視每一天與身體接觸的品質，無重金屬溶出。</p>
           </div>
 
-          <div class="feature-card glass-card fade-in">
-            <div class="feature-icon-wrapper cyan">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </div>
-            <h3>極速效能渲染</h3>
-            <p>零冗餘依賴，採用原生標準與高效 HTML/CSS/JS 構造，確保極速載入體驗。</p>
+          <div class="value-card glass-card fade-in">
+            <div class="value-icon">☯️</div>
+            <h3>簡單生活</h3>
+            <p>減少繁複，回歸生活本質，用最簡單的方式，照顧自己與家人健康。</p>
           </div>
 
-          <div class="feature-card glass-card fade-in">
-            <div class="feature-icon-wrapper emerald">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-            </div>
-            <h3>微動效與粒子背景</h3>
-            <p>具備互動式 HTML5 Canvas 背景粒子與流暢 CSS Hover 飄浮回饋感。</p>
+          <div class="value-card glass-card fade-in">
+            <div class="value-icon">✨</div>
+            <h3>健康美麗</h3>
+            <p>相信真正的美來自健康、平衡與內在的自在狀態，茶湯留香純粹。</p>
           </div>
 
-          <div class="feature-card glass-card fade-in">
-            <div class="feature-icon-wrapper amber">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h3>深色與淺色模式</h3>
-            <p>一鍵彈性切換夜間星空與明亮主題，符合現代使用者個性化介面偏好。</p>
+          <div class="value-card glass-card fade-in">
+            <div class="value-icon">💎</div>
+            <h3>細緻品質</h3>
+            <p>從材質的設計與結晶工藝，重視每一個微小細節，讓日常充滿高質感美學。</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Portfolio / Gallery Section -->
-    <section id="portfolio" class="section">
+    <!-- Pure Titanium Advantages Section -->
+    <section id="advantages" class="section highlight-bg">
       <div class="container">
         <div class="section-header text-center fade-in">
-          <span class="sub-title">PORTFOLIO SHOWCASE</span>
-          <h2 class="section-title">精選專案作品 showcase</h2>
-          <p class="section-desc">點擊分類按鈕篩選不同類型的應用與視覺專案</p>
+          <span class="sub-title">WHY PURE TITANIUM</span>
+          <h2 class="section-title">稀貴純鈦 · 5 大卓越優勢</h2>
+          <p class="section-desc">鈦被譽為「親生物金屬」，安全無毒、抗酸鹼腐蝕，為茶器帶來嶄新紀元</p>
+        </div>
+
+        <div class="advantages-grid">
+          <div class="advantage-card glass-card fade-in">
+            <div class="adv-number">01</div>
+            <h3>安全無毒 抗酸鹼</h3>
+            <p>稀貴純鈦材質，具備極強抗腐蝕能力，煮沸各類茶飲酸鹼皆不與金屬反應。</p>
+          </div>
+
+          <div class="advantage-card glass-card fade-in">
+            <div class="adv-number">02</div>
+            <h3>無鐵鏽異味 析出零金屬</h3>
+            <p>沏水煮茶絕無金屬鏽腥味，完美還原茶葉原始香氣與純淨水質。</p>
+          </div>
+
+          <div class="advantage-card glass-card fade-in">
+            <div class="adv-number">03</div>
+            <h3>不氧化不變色 硬度極高</h3>
+            <p>硬度高且耐磨損，在高溫下不氧化變色，即使乾燒亦不壞損。</p>
+          </div>
+
+          <div class="advantage-card glass-card fade-in">
+            <div class="adv-number">04</div>
+            <h3>無需繁複保養 適用多種熱源</h3>
+            <p>久用久新，表面天然抑菌，適用於電磁爐、瓦斯爐、黑晶爐等各種熱源。</p>
+          </div>
+
+          <div class="advantage-card glass-card fade-in full-width">
+            <div class="adv-number">05</div>
+            <h3>千度結晶質感 · 古韻格調美學</h3>
+            <p>經上千度高溫真空結晶，形成獨一無二的天然金屬結晶紋理，融合傳統古韻壺器造型。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Showcase Section -->
+    <section id="products" class="section">
+      <div class="container">
+        <div class="section-header text-center fade-in">
+          <span class="sub-title">PRODUCTS SHOWCASE</span>
+          <h2 class="section-title">精選純鈦壺器與生活選品</h2>
+          <p class="section-desc">以鈦為本，器之美學。點擊分類選單瀏覽最新產品</p>
         </div>
 
         <div class="filter-tabs fade-in">
-          <button class="tab-btn active" data-filter="all">全部作品</button>
-          <button class="tab-btn" data-filter="ui">UI/UX 設計</button>
-          <button class="tab-btn" data-filter="web">Web 應用</button>
-          <button class="tab-btn" data-filter="dash">數據儀表板</button>
+          <button class="tab-btn active" data-filter="all">全部產品</button>
+          <button class="tab-btn" data-filter="pot">德鐘鈦壺系列</button>
+          <button class="tab-btn" data-filter="box">八方鈦盒系列</button>
+          <button class="tab-btn" data-filter="cup">純鈦茶具杯組</button>
         </div>
 
-        <div class="portfolio-grid">
-          <!-- Item 1 -->
-          <div class="portfolio-card glass-card fade-in" data-category="web">
-            <div class="portfolio-img-box">
-              <div class="portfolio-gradient-bg g-1"></div>
-              <div class="portfolio-overlay">
-                <span class="tag">Web App</span>
-                <h3>星空與月相動態儀表板</h3>
-                <p>結合實時數據與天文視覺畫面的網頁介面</p>
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <div class="product-card glass-card fade-in" data-category="pot">
+            <div class="product-img-box">
+              <img src="https://static.wixstatic.com/media/8fd0b3_de96a00ae5314b348b61d5076e899866~mv2.jpg" alt="德鐘鈦壺" class="prod-img">
+              <span class="prod-tag">旗艦新品</span>
+            </div>
+            <div class="product-info">
+              <h3>德鐘鈦壺 (Dezhong Titanium Teapot)</h3>
+              <p>千度高溫真空結晶工藝，經典壺器造型，古韻格調美學。</p>
+              <div class="prod-footer">
+                <span class="price-text">純鈦 99.9% 打造</span>
+                <a href="#contact" class="cta-btn primary-btn btn-sm">專人諮詢</a>
               </div>
             </div>
           </div>
 
-          <!-- Item 2 -->
-          <div class="portfolio-card glass-card fade-in" data-category="ui">
-            <div class="portfolio-img-box">
-              <div class="portfolio-gradient-bg g-2"></div>
-              <div class="portfolio-overlay">
-                <span class="tag">UI/UX</span>
-                <h3>極簡新奢華品牌官網</h3>
-                <p>玻璃擬態與沉浸式互動捲動視覺體驗</p>
+          <!-- Product 2 -->
+          <div class="product-card glass-card fade-in" data-category="box">
+            <div class="product-img-box">
+              <img src="https://static.wixstatic.com/media/8fd0b3_bb7efe250ac040a7b3495fc2603f8e19~mv2.jpg" alt="八方鈦盒" class="prod-img">
+              <span class="prod-tag">經典熱銷</span>
+            </div>
+            <div class="product-info">
+              <h3>八方鈦盒 (Bafang Titanium Storage Box)</h3>
+              <p>八角氣密結構，抗光保鮮防潮，藏茶封味極佳。</p>
+              <div class="prod-footer">
+                <span class="price-text">抑菌防潮保鮮</span>
+                <a href="#contact" class="cta-btn primary-btn btn-sm">專人諮詢</a>
               </div>
             </div>
           </div>
 
-          <!-- Item 3 -->
-          <div class="portfolio-card glass-card fade-in" data-category="dash">
-            <div class="portfolio-img-box">
-              <div class="portfolio-gradient-bg g-3"></div>
-              <div class="portfolio-overlay">
-                <span class="tag">Dashboard</span>
-                <h3>AI 數據可視化平台</h3>
-                <p>實時圖表、動態指標與高自由度自訂模組</p>
+          <!-- Product 3 -->
+          <div class="product-card glass-card fade-in" data-category="cup">
+            <div class="product-img-box">
+              <img src="https://static.wixstatic.com/media/8fd0b3_d29e3999bf14499da82335c79326c06d~mv2.jpg" alt="純鈦雙層品茗杯" class="prod-img">
+              <span class="prod-tag">工藝精選</span>
+            </div>
+            <div class="product-info">
+              <h3>純鈦雙層品茗杯組</h3>
+              <p>雙層防燙溫潤手感，留住茶香本色與溫潤茶湯。</p>
+              <div class="prod-footer">
+                <span class="price-text">雙層隔熱設計</span>
+                <a href="#contact" class="cta-btn primary-btn btn-sm">專人諮詢</a>
               </div>
             </div>
           </div>
 
-          <!-- Item 4 -->
-          <div class="portfolio-card glass-card fade-in" data-category="web">
-            <div class="portfolio-img-box">
-              <div class="portfolio-gradient-bg g-4"></div>
-              <div class="portfolio-overlay">
-                <span class="tag">Web App</span>
-                <h3>微服務體驗平台</h3>
-                <p>反應迅速且模組化的雲端用戶操作終端</p>
+          <!-- Product 4 -->
+          <div class="product-card glass-card fade-in" data-category="pot">
+            <div class="product-img-box">
+              <img src="https://static.wixstatic.com/media/8fd0b3_6cb8ece9a07a420a9aaf67c70f795b85~mv2.jpg" alt="輕量純鈦快客壺" class="prod-img">
+              <span class="prod-tag">可攜式</span>
+            </div>
+            <div class="product-info">
+              <h3>純鈦攜帶型快客壺組</h3>
+              <p>戶外露營與隨行品茗最佳選擇，極致輕盈堅固。</p>
+              <div class="prod-footer">
+                <span class="price-text">超輕便攜</span>
+                <a href="#contact" class="cta-btn primary-btn btn-sm">專人諮詢</a>
               </div>
             </div>
           </div>
@@ -210,104 +275,193 @@
       </div>
     </section>
 
-    <!-- Interactive Widgets Section -->
-    <section id="widgets" class="section">
+    <!-- Brand Story & Award Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text-box fade-in">
+            <span class="sub-title">ABOUT ESUMOON</span>
+            <h2 class="section-title">關於 Esumoon 易善美</h2>
+            
+            <div class="story-content">
+              <p>
+                <strong>易善美源自「用最簡單的方式，達到盡善盡美」的理念。</strong>
+              </p>
+              <p>
+                我們專注於精緻鈦器（壺）與飲食生活選品，將純淨、美感與生活品質融入日常，讓每一次使用與品味，都能成為簡單而美好的體驗。
+              </p>
+              <p>
+                鈦於 18 世紀被發現，並以希臘神話中力量象徵的「泰坦神（Titans）」命名。鈦的出現將金屬材料帶入嶄新時代，現已被廣泛應用於航空、醫療、造紙與日用品領域。
+              </p>
+              
+              <div class="award-box glass-card">
+                <div class="award-icon">🏆</div>
+                <div>
+                  <h4>國際設計獎項肯定</h4>
+                  <p>博友製鈦堅持將傳統工藝與現代設計融合，作品榮獲多項國際大獎肯定，展現鈦器工藝的創新與價值。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-image-box fade-in">
+            <div class="glass-card img-frame">
+              <img src="https://static.wixstatic.com/media/8fd0b3_3ad7d8d8f7574eb6b302c49c690d31e6~mv2.png" alt="國際獎項肯定工藝" class="about-img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Test Reports & Quality Certification -->
+    <section id="reports" class="section highlight-bg">
       <div class="container">
         <div class="section-header text-center fade-in">
-          <span class="sub-title">INTERACTIVE TOOLS</span>
-          <h2 class="section-title">實時互動控制與狀態面板</h2>
-          <p class="section-desc">試試下方互動控制項，自訂主題色系或即時查看系統動態</p>
+          <span class="sub-title">CERTIFICATION</span>
+          <h2 class="section-title">嚴謹權威檢測報告</h2>
+          <p class="section-desc">堅持每一款純鈦產品皆通過權威機構檢驗，給您最完美的安心保障</p>
         </div>
 
-        <div class="widgets-grid">
-          <!-- Widget 1: System Status & Clock -->
-          <div class="widget-card glass-card fade-in">
-            <div class="widget-header">
-              <span class="widget-title">⏱️ 系統即時時鐘 & 運行狀態</span>
-              <span class="status-badge online">● Operational</span>
-            </div>
-            <div class="clock-display">
-              <div id="live-time" class="time-text">00:00:00</div>
-              <div id="live-date" class="date-text">2026-07-24 (Fri)</div>
-            </div>
-            <div class="sys-metrics">
-              <div class="sys-item">
-                <span>記憶體負載</span>
-                <div class="progress-bar"><div class="progress" style="width: 28%;"></div></div>
-              </div>
-              <div class="sys-item">
-                <span>網路延遲</span>
-                <span class="val">14 ms</span>
-              </div>
+        <div class="reports-grid">
+          <div class="report-card glass-card fade-in">
+            <div class="report-icon">🛡️</div>
+            <h3>SGS 99.9% 純鈦認證</h3>
+            <p>通過權威機構材質檢定，保證純鈦含量高達 99.9% 以上，無雜質混入。</p>
+          </div>
+
+          <div class="report-card glass-card fade-in">
+            <div class="report-icon">🔬</div>
+            <h3>重金屬零溶出檢驗</h3>
+            <p>在高溫酸性茶湯與沸水測試下，鉛、鎘、砷等重金屬均無析出反應。</p>
+          </div>
+
+          <div class="report-card glass-card fade-in">
+            <div class="report-icon">🌱</div>
+            <h3>食品級安全衛生標準</h3>
+            <p>符合國際食品接觸容器安全標準，抑菌抗腐蝕，使用安心倍至。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-header text-center fade-in">
+          <span class="sub-title">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 class="section-title">常見問題解答</h2>
+          <p class="section-desc">關於純鈦壺器使用與保養的常見疑問</p>
+        </div>
+
+        <div class="faq-list fade-in">
+          <div class="faq-item glass-card">
+            <button class="faq-question">
+              <span>純鈦壺適合沖煮哪些種類的茶葉或飲品？</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>純鈦具備強大抗酸鹼與不溶出金屬屬性，適合沖煮各類茶葉（普洱、烏龍、綠茶、紅茶）以及咖啡、中藥材甚至酸性果汁，完全不會遺留異味或改變飲品口感。</p>
             </div>
           </div>
 
-          <!-- Widget 2: Accent Color Customizer -->
-          <div class="widget-card glass-card fade-in">
-            <div class="widget-header">
-              <span class="widget-title">🎨 主題色彩自由切換</span>
-              <span class="status-badge">Live Preview</span>
+          <div class="faq-item glass-card">
+            <button class="faq-question">
+              <span>純鈦壺可以放在電磁爐或瓦斯爐上加熱嗎？</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>可以。易善美德鐘鈦壺適用於電磁爐、瓦斯爐、黑晶爐、電熱爐等大部分常用熱源，且純鈦耐高溫不懼乾燒，導熱均勻穩定。</p>
             </div>
-            <p class="widget-desc">點擊下方色塊，即時更改全站重點強調色：</p>
-            <div class="color-picker-group">
-              <button class="color-dot active" data-color="indigo" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);"></button>
-              <button class="color-dot" data-color="cyan" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);"></button>
-              <button class="color-dot" data-color="emerald" style="background: linear-gradient(135deg, #10b981, #059669);"></button>
-              <button class="color-dot" data-color="rose" style="background: linear-gradient(135deg, #f43f5e, #e11d48);"></button>
-              <button class="color-dot" data-color="amber" style="background: linear-gradient(135deg, #f59e0b, #d97706);"></button>
+          </div>
+
+          <div class="faq-item glass-card">
+            <button class="faq-question">
+              <span>純鈦茶具該如何日常清潔與保養？</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>純鈦表面自帶薄層二氧化鈦保護膜，具備天然抑菌能力。日常使用後只需用清水或海綿洗劑沖洗晾乾即可，無需像紫砂或鐵壺般繁複養壺保養。</p>
             </div>
-            <div class="preview-box">
-              <span>當前強調色預覽按鈕：</span>
-              <button class="cta-btn primary-btn btn-sm">Sample Accent</button>
+          </div>
+
+          <div class="faq-item glass-card">
+            <button class="faq-question">
+              <span>壺身上的結晶紋理會隨時間掉落或褪色嗎？</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>不會。千度高溫結晶是鈦金屬本身在超高溫真空下產生的晶體結構變化，非表面化學塗層，因此不會脫落、褪色，長久保持光澤。</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact & Order Inquiry Section -->
     <section id="contact" class="section">
       <div class="container">
         <div class="contact-box glass-card fade-in">
           <div class="contact-header text-center">
-            <span class="sub-title">GET IN TOUCH</span>
-            <h2 class="section-title">與我們取得聯絡</h2>
-            <p class="section-desc">填寫表單或有任何需求，我們將為您提供完整的數位解決方案。</p>
+            <span class="sub-title">CONTACT US</span>
+            <h2 class="section-title">聯絡我們 · 線上諮詢</h2>
+            <p class="section-desc">如有產品訂購、客製合作或加盟需求，歡迎填寫以下表單或直接聯繫我們。</p>
           </div>
 
           <form id="contact-form" class="contact-form">
             <div class="form-grid">
               <div class="form-group">
-                <label for="name">您的姓名</label>
-                <input type="text" id="name" required placeholder="例如：張小明">
+                <label for="name">您的姓名 *</label>
+                <input type="text" id="name" required placeholder="例如：王小明">
               </div>
               <div class="form-group">
-                <label for="email">電子郵件</label>
+                <label for="email">電子郵件 *</label>
                 <input type="email" id="email" required placeholder="name@example.com">
               </div>
             </div>
-            
-            <div class="form-group">
-              <label for="subject">諮詢主題</label>
-              <select id="subject">
-                <option value="web">網頁開發需求</option>
-                <option value="ui">UI/UX 設計諮詢</option>
-                <option value="custom">客製化系統應用</option>
-                <option value="other">其他合作企劃</option>
-              </select>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="phone">聯絡電話</label>
+                <input type="tel" id="phone" placeholder="例如：0912-345-678">
+              </div>
+              <div class="form-group">
+                <label for="subject">諮詢項目</label>
+                <select id="subject">
+                  <option value="product">德鐘鈦壺 / 八方鈦盒訂購</option>
+                  <option value="custom">企業禮品客製訂製</option>
+                  <option value="coop">品牌代理與經銷合作</option>
+                  <option value="other">其他問題詢問</option>
+                </select>
+              </div>
             </div>
 
             <div class="form-group">
-              <label for="message">需求說明</label>
-              <textarea id="message" rows="4" required placeholder="請簡述您的需求或建議..."></textarea>
+              <label for="message">需求說明 *</label>
+              <textarea id="message" rows="4" required placeholder="請簡述您的需求或預訂數量..."></textarea>
             </div>
 
             <button type="submit" class="cta-btn primary-btn btn-full">
-              <span>發送訊息</span>
+              <span>發送諮詢訊息</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             </button>
             <div id="form-status" class="form-status"></div>
           </form>
+
+          <!-- Direct Info Bar -->
+          <div class="contact-info-bar">
+            <div class="info-item">
+              <span class="info-icon">📧</span>
+              <span>Email: info@mysite.com</span>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">📞</span>
+              <span>Tel: 123-456-7890</span>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">🌐</span>
+              <span>社群：Facebook / Instagram</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -318,32 +472,36 @@
     <div class="container footer-content">
       <div class="footer-brand">
         <a href="#" class="logo">
-          <span class="logo-icon">🌙</span>
-          <span class="logo-text">ESU<span class="highlight">MOON</span></span>
+          <span class="logo-mark">🫖</span>
+          <div class="logo-text-group">
+            <span class="logo-title">Esumoon</span>
+            <span class="logo-sub">易善美</span>
+          </div>
         </a>
-        <p>為您打造卓越的現代 Web 數位體驗。</p>
+        <p>用最簡單的方式，達到盡善盡美。為您呈現純淨健康的極致純鈦飲食生活。</p>
       </div>
 
       <div class="footer-links">
         <div class="link-group">
-          <h4>導覽</h4>
+          <h4>網站導覽</h4>
           <a href="#hero">首頁</a>
-          <a href="#features">特色</a>
-          <a href="#portfolio">作品</a>
-          <a href="#contact">聯絡</a>
+          <a href="#about">關於我們</a>
+          <a href="#advantages">純鈦優勢</a>
+          <a href="#products">精選產品</a>
+          <a href="#reports">檢測報告</a>
+          <a href="#faq">常見問題</a>
         </div>
         <div class="link-group">
-          <h4>技術</h4>
-          <span>HTML5 & CSS3</span>
-          <span>ES6+ JavaScript</span>
-          <span>Glassmorphism UI</span>
-          <span>Canvas Particles</span>
+          <h4>條款與政策</h4>
+          <a href="#">服務條款 Terms & Conditions</a>
+          <a href="#">運送政策 Shipping Policy</a>
+          <a href="#">隱私權政策 Privacy Policy</a>
         </div>
       </div>
     </div>
 
     <div class="footer-bottom text-center">
-      <p>&copy; 2026 ESUMOON Studio. All rights reserved.</p>
+      <p>&copy; 2026 Esumoon 易善美. All rights reserved.</p>
     </div>
   </footer>
 
